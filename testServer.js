@@ -15,6 +15,6 @@ app.get('/test', (req, res ) =>
     res.json({ message: 'Express is easy' })
 );
 
-const port = process.env.PORT || 5080;
+const port = process.env.PORT || 3004;
 
 app.listen(port, () => console.log(`app listening on http://localhost:${port}`) );

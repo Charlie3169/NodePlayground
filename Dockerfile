@@ -1,4 +1,5 @@
-FROM node:12
+# NodePlayground dockerfile
+FROM node:14
 
 WORKDIR /app
 
@@ -7,9 +8,5 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-
-ENV PORT=5080
-
-EXPOSE 5080
 
 CMD [ "npm", "start" ]
