@@ -5,10 +5,10 @@ const io = require('socket.io')(http, {
     cors: { origin: "*" }
 });
 
-io.on('connection', (socket) => {
+io.on('connection', (socket : any) => {
     console.log('a user connected');
 
-    socket.on('message', (message) =>     {
+    socket.on('message', (message : any) =>     {
         console.log(message);
         io.emit('message', `${socket.id.substr(0,2)} said ${message}` );   
     });

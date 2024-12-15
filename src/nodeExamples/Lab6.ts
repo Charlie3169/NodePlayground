@@ -1,21 +1,21 @@
-const http = require("http");
-const os = require("os");
-const ip = require('ip');
+const http6 = require("http");
+const os6 = require("os");
+const ip6 = require('ip');
 
-http.createServer((req, res) => {
+http6.createServer((req : any, res : any) => {
     res.writeHead(200, {"Content-Type": "text/html"});
 
-    myHostName=os.hostname();
-    serverUptime = os.uptime();
-    reducedDays = Math.floor(serverUptime / 86400);
-    reducedHours = Math.floor(serverUptime / 3600) - reducedDays * 24;
-    reducedMinutes = Math.floor(serverUptime / 60) - reducedDays * 1440 - reducedHours * 60;
-    reducedSeconds = serverUptime - reducedDays * 86400 - reducedHours * 3600 - reducedMinutes * 60;
-    totalMemory = (os.totalmem() / (1024**2)).toFixed(3);
-    freeMemory = (os.freemem() / (1024**2)).toFixed(3);
-    numCPUs = os.cpus().length;
+    let myHostName=os6.hostname();
+    let serverUptime = os6.uptime();
+    let reducedDays = Math.floor(serverUptime / 86400);
+    let reducedHours = Math.floor(serverUptime / 3600) - reducedDays * 24;
+    let reducedMinutes = Math.floor(serverUptime / 60) - reducedDays * 1440 - reducedHours * 60;
+    let reducedSeconds = serverUptime - reducedDays * 86400 - reducedHours * 3600 - reducedMinutes * 60;
+    let totalMemory = (os6.totalmem() / (1024**2)).toFixed(3);
+    let freeMemory = (os6.freemem() / (1024**2)).toFixed(3);
+    let numCPUs = os6.cpus().length;
       
-    html=`    
+    let html=`    
     <!DOCTYPE html>
     <html>
       <head>
@@ -23,7 +23,7 @@ http.createServer((req, res) => {
       </head>
       <body>
         <p>Hostname: ${myHostName}</p>
-        <p>IP: ${ip.address()}</p>
+        <p>IP: ${ip6.address()}</p>
         <p>Server Uptime: Days: ${reducedDays}, Hours: ${reducedHours}, Minutes: ${reducedMinutes}, Seconds: ${reducedSeconds}</p>
         <p>Total Memory: ${totalMemory} MB</p>
         <p>Free Memory: ${freeMemory} MB</p>

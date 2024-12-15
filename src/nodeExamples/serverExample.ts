@@ -1,17 +1,17 @@
-const http = require("http");
-const fs = require("fs");
-const os = require("os");
-const ip = require('ip');
+const http1 = require("http");
+const fs1 = require("fs");
+const os1 = require("os");
+const ip1 = require('ip');
 
-http.createServer((req, res) => {
+http.createServer((req : any, res : any) => {
   if (req.url === "/") {
-      fs.readFile("./public/index.html", "UTF-8", (err, body) => {
+      fs1.readFile("./public/index.html", "UTF-8", (err : any, body : any) => {
       res.writeHead(200, {"Content-Type": "text/html"});
       res.end(body);
     });
   } else if(req.url.match("/sysinfo")) {
-    myHostName=os.hostname();
-    html=`
+    let myHostName= os1.hostname();
+    let html=`
     <!DOCTYPE html>
     <html>
       <head>
@@ -19,7 +19,7 @@ http.createServer((req, res) => {
       </head>
       <body>
         <p>Hostname: ${myHostName}</p>
-        <p>IP: ${ip.address()}</p>
+        <p>IP: ${ip1.address()}</p>
         <p>Server Uptime: </p>
         <p>Total Memory: </p>
         <p>Free Memory: </p>
