@@ -1,10 +1,10 @@
-const http = require("http");
-const data = require("./widgets.json");
+const http9 = require("http");
+const data9 = require("./widgets.json");
 
-const server = http.createServer((req, res) => {
+const server9 = http9.createServer((req : any, res : any) => {
     if (req.url === "/") {
         res.writeHead(200, {"Content-Type": "text/json"});
-        res.end(JSON.stringify(data));        
+        res.end(JSON.stringify(data9));        
       } else {
         res.writeHead(404, {"Content-Type": "text/plain"});
         res.end("Data not found");        

@@ -1,7 +1,7 @@
 const dns = require('dns');
 
-const hostnameLookup = (hostname) => {
-  dns.lookup(hostname, (err, addresses, family) => {
+const hostnameLookup = (hostname: string) => {
+  dns.lookup(hostname, (err: any, addresses: any, family: any) => {
     console.log(addresses);
   });
 }
